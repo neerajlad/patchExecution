@@ -45,7 +45,7 @@
                             %>
                                  <option><%=p.getPatchversion()%></option>                  
                             <%  
-                                } 
+                                }  
                             %>
                             </select>
                         </td>
