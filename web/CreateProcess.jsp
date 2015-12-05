@@ -14,9 +14,24 @@
     <body>
         <div>
             <form action="MasterProcessController" name="frmCreateProcess" method="POST">
-                Process Name : <input type="text" name="txtProcessName" value="" placeholder="Enter Process Name" />
+                <table border="0">                   
+                    <tbody>
+                        <tr>
+                            <td>Process Name : </td>
+                            <td><input type="text" name="txtProcessName" value="" placeholder="Enter Process Name" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><br/><input type="reset" value="Clear" name="btnClear" />
+                                <input type="submit" value="Save" name="btnSave" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
                 <br/><br/>
-                <input type="submit" value="Save" name="btnSave" />
+                
             </form>
         </div>
     </body>

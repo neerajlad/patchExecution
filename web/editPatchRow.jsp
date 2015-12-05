@@ -31,7 +31,7 @@
                 if (!((aPatchVersion) == null && (aSubProcessName) == null )  ) {                    
                     slavepatchexecutionstatusbean = slavepatchexecutionstatusdao.getProcessByVersionSubprocess(aPatchVersion,aSubProcessName);
             %>
-            <table border="1">                
+            <table border="0">                
                 <tbody>
                     <tr>
                         <td>Patch Version :</td>

@@ -12,6 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/tableskin.css">
 <!--        C:\Users\neerajkumar.b.lad\Documents\NetBeansProjects\PatchExectionStatus\web\WEB-INF\lib\jquery-ui-1.11.4-->
               
         <title>End Current Patch</title>
@@ -28,7 +29,7 @@
         <div>
             <form action="UpdateEndCurrentPatchController" name="frmEndPatch" method="POST">
            
-            <table border="0">               
+            <table >               
                 <tbody>
                     <tr>
                         <td>Select Patch Version :</td>
@@ -48,17 +49,20 @@
                             %>
                             </select>
                         </td>
-                        <td><input type="hidden" name="txtEnddate" id="enddate" /></td>
+                        <td>
+                            <input type="hidden" name="txtEnddate" id="enddate" />
+                            <input type="submit" value="End Patch" name="btnEndPatch" />
+                        </td>
                     </tr>
                     <tr>
-                        <td><br/><input type="submit" value="End Patch" name="btnEndPatch" /></td>
-                        <td></td>
+                        <td><br/></td>
+                        <td><br/></td>
                     </tr>
                 </tbody>
             </table>
             </form>                 
-                            <br/><br/>  
-                <table border="1">
+                <br/><br/>  
+                <table border="1" class="gridtable">
                     <thead>
                         <tr>
                             <th>No</th>

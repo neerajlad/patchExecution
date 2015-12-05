@@ -16,6 +16,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Start New Patch</title>
          <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+         <link rel="stylesheet" type="text/css" href="css/tableskin.css">
         <script>
             $( "select" )
               .change(function () {
@@ -33,7 +34,7 @@
             MasterPatchDao masterpatchdao = new MasterPatchDao();
             List<masterPatchBean> lstpatch = masterpatchdao.getAllNotEndedMasterPatch();
         %>
-        <label></label>
+        
         <div>
             <select name="drpViewOpenPatch" id="iddrpViewOpenPatch">                
                 <%
@@ -45,8 +46,9 @@
                     } 
                 %>
             </select>
-          
-            <table border="1">                
+          <br/>
+          <br/>
+            <table border="1" class="gridtable">                
                 <tbody>
 <!--            <form name="frmViewCurrentPatch" method="POST">
           -->

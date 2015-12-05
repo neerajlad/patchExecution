@@ -42,8 +42,12 @@
                 </tr>
                 
                 <tr>
-                    <td><input type="submit" value="Create New Patch" name="btnCreatePatch" /></td>
                     <td></td>
+                    <td>
+                        <input type="reset" value="Clear" name="btnClear" />
+                        <input type="submit" value="Create New Patch" name="btnCreatePatch" />
+                    </td>
+                    
                 </tr>
             </tbody>
         </table>

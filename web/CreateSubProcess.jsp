@@ -21,21 +21,37 @@
                 List<masterProcessBean> lstProcess = masterprocessdao.getAllMasterProcess();
             %>
             <form action="MasterSubProcessController" name="frmCreateSubProcess" method="POST">
-                Select Process Name :
-                <select name="drpProcessName">
-                    <%
-                        for (masterProcessBean p : lstProcess)
-                        {    
-                    %>
-                         <option><%=p.getProcessname()%></option>                  
-                    <%  
-                        } 
-                    %>
-                </select>
-                <br/><br/>                
-                Sub Process Name :<input type="text" name="txtSubProcessName" value="" placeholder="Enter Sub process Name" />
-                <br/><br/>
-                <input type="submit" value="Save" name="btnSave" />
+               
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Select Process Name :</td>
+                            <td>
+                                <select name="drpProcessName">
+                                <%
+                                    for (masterProcessBean p : lstProcess)
+                                    {    
+                                %>
+                                     <option><%=p.getProcessname()%></option>                  
+                                <%  
+                                    } 
+                                %>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sub Process Name :</td>
+                            <td><input type="text" name="txtSubProcessName" value="" placeholder="Enter Sub process Name" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="reset" value="Clear" name="btnClear" />
+                                <input type="submit" value="Save" name="btnSave" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </form>
         </div>
     </body>
