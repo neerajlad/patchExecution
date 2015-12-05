@@ -13,8 +13,7 @@ public class slavePatchExecutionStatusBean {
     
     private String patchversion;
     private String processname;
-    private String subprocessname;
-    private String executor;
+    private String subprocessname;    
     private String assignedto;
     private String status;
     private String comment;
@@ -43,14 +42,7 @@ public class slavePatchExecutionStatusBean {
     public void setSubprocessname(String subprocessname) {
         this.subprocessname = subprocessname;
     }
-
-    public String getExecutor() {
-        return executor;
-    }
-
-    public void setExecutor(String executor) {
-        this.executor = executor;
-    }
+  
 
     public String getAssignedto() {
         return assignedto;

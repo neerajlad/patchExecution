@@ -134,8 +134,8 @@ public class MasterPatchDao {
     
         try {
                 String sql = "insert into s_patchexecution(patchversion,processname,subprocessname) "
-                        + "select mp.patchversion,mpro.processname,ms.subprocessname "
-                        + "from m_patch mp, m_process mpro, m_subprocess ms where mp.patchversion=?";
+                        + "select mp.patchversion,ms.processname,ms.subprocessname "
+                        + "from m_patch mp, m_subprocess ms where mp.patchversion=?";
                 
             PreparedStatement ps = conn.prepareStatement(sql);
             
