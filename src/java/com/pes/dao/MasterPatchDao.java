@@ -30,8 +30,7 @@ public class MasterPatchDao {
     }
     
     public void addMasterPatch(masterPatchBean masterpatchbean)
-    {
-    
+    {    
         try {
                 String sql = "INSERT INTO m_patch(patchversion,servername,startdate)" +
                 " VALUES ( ? ,? ,?)";

@@ -82,9 +82,10 @@ public class MasterSubProcessController extends HttpServlet {
         String strProcessName = request.getParameter("drpProcessName");
         String strSubProcessName = request.getParameter("txtSubProcessName");
         MasterSubProcessDao mastersubprocessdao = new MasterSubProcessDao();
-        masterSubProcessBean mastersubprocessbean = new masterSubProcessBean();
+        //masterSubProcessBean mastersubprocessbean = new masterSubProcessBean();
         if(!mastersubprocessdao.IsSubProcessExists(strSubProcessName))
         {
+           masterSubProcessBean mastersubprocessbean = new masterSubProcessBean();  
             mastersubprocessbean.setProcessname(strProcessName);            
             mastersubprocessbean.setSubprocessname(strSubProcessName);            
             mastersubprocessdao.addMasterSubProcess(mastersubprocessbean);

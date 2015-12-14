@@ -50,10 +50,10 @@ public class MasterProcessDao {
         try {
                 String sql = "SELECT * FROM m_process";
             PreparedStatement ps = conn.prepareStatement(sql);
-            masterProcessBean masterprocessbean = new masterProcessBean();
+            //masterProcessBean masterprocessbean = new masterProcessBean();
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-//                masterProcessBean masterprocessbean = new masterProcessBean();                
+                masterProcessBean masterprocessbean = new masterProcessBean();                
                 masterprocessbean.setProcessname(rs.getString("processname"));                
                 lstmasterprocess.add(masterprocessbean);
             }

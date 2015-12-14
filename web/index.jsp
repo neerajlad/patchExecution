@@ -15,11 +15,11 @@
         
 <frameset rows="20%,80%">
 
-    <frame src="header.jsp"/>
+    <frame src="header.jsp" frameborder="0" scrolling="no" />
 
-    <frameset cols="25%,75%">
-        <frame src="leftMenu.jsp" name="leftmenu"/>
-        <frame src="containsPage.jsp" name="containsPage"/>
+    <frameset cols="16%,84%">
+        <frame src="leftMenu.jsp" name="leftmenu" frameborder="0" />
+        <frame src="containsPage.jsp" name="containsPage" frameborder="0"/>
     </frameset>
 </frameset>
     

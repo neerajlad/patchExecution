@@ -25,6 +25,9 @@ table.gridtable td {
 	
 }
 
+tbody tr:hover {
+    background-color: #EEEEEE;
+}
 #panel,#flip
 {
 padding:5px;
@@ -37,3 +40,4 @@ border:solid 1px #c3c3c3;
 padding:50px;
 display:none;
 }
+

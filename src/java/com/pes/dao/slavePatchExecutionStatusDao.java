@@ -48,7 +48,7 @@ public class slavePatchExecutionStatusDao {
      public List getAllSelectedPatchProcess(String patchversion) {
         List lstselectedPatchProcess = new ArrayList();
         try {
-                String sql = "SELECT * FROM s_patchexecution where patchversion=?";                
+                String sql = "SELECT * FROM s_patchexecution where patchversion=? ORDER BY processname";                
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, patchversion);
             ResultSet rs = ps.executeQuery();
@@ -92,6 +92,28 @@ public class slavePatchExecutionStatusDao {
             e.printStackTrace();
         }
         return slavepatchexecutionstatusbean;
+    }
+     
+      public int getProcessStatusCount(String patchversion,String status) 
+   {
+       int rowCount=0;
+        try 
+            {
+            String sql = "SELECT count(status) FROM s_patchexecution where patchversion=? and status =? ORDER BY processname";                
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, patchversion);
+            ps.setString(2, status);
+            ResultSet rs = ps.executeQuery();
+            
+            rs.next();
+            rowCount = rs.getInt(1);
+            System.out.println(rowCount);
+    
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return rowCount;
     }
     
 }

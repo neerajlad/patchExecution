@@ -12,6 +12,12 @@
         <title>Patch Execution Status</title>
     </head>
     <body>
-        <h1>Patch Execution Status</h1>
+        
+            <div align="left">
+                <h1>IS-Suite</h1>
+            </div>
+            <div align="center">
+                <h1>Patch Execution Status</h1>
+            </div>
     </body>
 </html>

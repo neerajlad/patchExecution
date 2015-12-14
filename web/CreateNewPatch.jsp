@@ -32,8 +32,8 @@
                 <tr>
                     <td>Server Name :</td>
                     <td><select name="drpServerName">
-                            <option>Auto ENKD</option>
-                            <option>Prod ENKD</option>                            
+                            <option>Auto ENDK</option>
+                            <option>Prod ENDK</option>                            
                         </select></td>
                 </tr>
                 <tr>

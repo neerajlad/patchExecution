@@ -9,9 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Welcome</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Welcome To IS-Suite Patch Execution Tracker</h1>
+        <h3>Create Process : Link will help you to create new process if you want to add in patch</h3>
+        <h3>Create Sub Process : Link will help you to create Sub new process if you want to add in Selected Process</h3>
+        <h3>Create New Patch : Select this link if you got patch and ready for execution</h3>
+        <h3>View Patch Execution Status: User can view Current open patch status and progress</h3>
+        <h3>Close Patch: Link will help you to close any selected patch</h3>
     </body>
 </html>

@@ -64,6 +64,44 @@ public class MasterSubProcessDao {
         return lstmastersubprocess;    
     }
     
+    public List getAllOnlyMasterProcess()
+    {
+        List lstmastersubprocess = new ArrayList();
+        try {
+                String sql = "SELECT DISTINCT processname FROM m_subprocess order by processname";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                masterSubProcessBean mastersubprocessbean = new masterSubProcessBean();
+                mastersubprocessbean.setProcessname(rs.getString("processname"));                
+                lstmastersubprocess.add(mastersubprocessbean);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return lstmastersubprocess;    
+    }
+    
+    public List getAllOnlyMasterSubProcess(String processname)
+    {
+        List lstmastersubprocess = new ArrayList();
+        try {
+                String sql = "SELECT * FROM m_subprocess where processname=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, processname);
+            
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                masterSubProcessBean mastersubprocessbean = new masterSubProcessBean();
+                mastersubprocessbean.setSubprocessname(rs.getString("subprocessname"));                
+                lstmastersubprocess.add(mastersubprocessbean);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return lstmastersubprocess;    
+    }
     public masterSubProcessBean getMasterSubProcessByMasterProcessName(String processname)
     {
         masterSubProcessBean mastersubprocessbean = new masterSubProcessBean(); 

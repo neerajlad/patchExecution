@@ -5,10 +5,12 @@
  */
 package com.pes.Servletcontroller;
 
+import com.pes.bean.PieChartData;
 import com.pes.bean.slavePatchExecutionStatusBean;
 import com.pes.dao.slavePatchExecutionStatusDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -76,6 +78,7 @@ public class SlavePatchExecutionStatusController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String redirect="";
         String uPatchversion = request.getParameter("patchversion");  
         System.out.println("patch version :::>"+uPatchversion);
@@ -84,12 +87,19 @@ public class SlavePatchExecutionStatusController extends HttpServlet {
         String action = request.getParameter("action");
         System.out.println("action :>:>:>"+action);
         
+//        if(uPatchversion==null)
+//        {
+//            uPatchversion = request.getParameter("drpViewOpenPatch");
+//            uSubprocessname = "";
+//            action="";
+//            redirect = ViewCurrentPatch;
+//        }
+
+        
         if (action.equalsIgnoreCase("edit")){
-                //String userId = request.getParameter("userId");
-            //int uid = Integer.parseInt(userId);           
-//            String strPatchversion = request.getParameter("patchversion");
-//            String strSubProcessName = request.getParameter("subprocessname");
+
             slavePatchExecutionStatusBean slavepatchexecutionStatusbean = new slavePatchExecutionStatusBean();
+
             // taking parameter from editpatchRow.jsp
             slavepatchexecutionStatusbean.setPatchversion(request.getParameter("txtPatchversion"));
             slavepatchexecutionStatusbean.setProcessname(request.getParameter("txtProcessName"));
@@ -101,13 +111,14 @@ public class SlavePatchExecutionStatusController extends HttpServlet {
             
            
             slavepatchexecutionstatusdao.editPatchRpw(slavepatchexecutionStatusbean);
-            request.setAttribute("slavepatchexecutionStatusbean", slavepatchexecutionStatusbean);
+            request.setAttribute("editedData", slavepatchexecutionStatusbean);
+            
             redirect = ViewCurrentPatch;
             System.out.println("Record updated Successfully");
             }
             else if (action.equalsIgnoreCase("editform")){         
                 redirect = Edit;
-            }
+            }            
         
          RequestDispatcher rd = request.getRequestDispatcher(redirect);
         rd.forward(request, response);
@@ -135,5 +146,9 @@ public class SlavePatchExecutionStatusController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private void PieChartData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

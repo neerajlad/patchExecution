@@ -12,6 +12,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edit</title>
+        <script type="text/javascript">
+window.onload = function () {
+    setCursor(document.getElementById('txtComments'), 0, 0);
+};
+
+function setCursor(el, st, end) {
+    if (el.setSelectionRange) {
+        el.focus();
+        el.setSelectionRange(st, end);
+    } else {
+        if (el.createTextRange) {
+            range = el.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', end);
+            range.moveStart('character', st);
+            range.select();
+        }
+    }
+}
+</script>
     </head>
     <body>
           <%
@@ -49,15 +69,21 @@
                         <td>Assigned To :</td>
                         <td><select name="drpAssignedTo">
                                 
-                                <option selected="selected"><%=slavepatchexecutionstatusbean.getAssignedto()%></option>
-                                <option>mayank@cgi.com</option>
-                                <option>mahesh@cgi.com</option>
+                                <option selected="selected"><%=slavepatchexecutionstatusbean.getAssignedto() == null ? "" :slavepatchexecutionstatusbean.getAssignedto() %></option>
+                                <option>mahesh.rampur@cgi.com</option>
+                                <option>mayank.shrivastava@cgi.com</option>
+                                <option>neerajkumar.b.lad@cgi.com</option>
+                                <option>susmita.jena@cgi.com</option>
+                                <option>tintu.thomas@cgi.com</option>
+                                <option>vuppalapati.prasad@cgi.com</option>
+                                <option>bhola.shankarprasad@cgi.com</option>
+                                
                             </select></td>
                     </tr>
                     <tr>
                         <td>Status :</td>
                         <td><select name="drpStatus">
-                                <option selected="selected"><%=slavepatchexecutionstatusbean.getStatus()%></option>
+                                <option selected="selected"><%=slavepatchexecutionstatusbean.getStatus() == null ? "" :slavepatchexecutionstatusbean.getStatus()%></option>
                                 <option>Not Started</option>
                                 <option>In-Progress</option>
                                 <option>Completed</option>
@@ -67,13 +93,13 @@
                     </tr>
                     <tr>
                         <td>Comment :</td>
-                        <td><textarea name="txtComments" rows="4" cols="20" >
-                                <%=slavepatchexecutionstatusbean.getComment()%>
+                        <td><textarea name="txtComments" rows="4" cols="20" id="txtComments">
+                                <%=slavepatchexecutionstatusbean.getComment() == null ? "" :slavepatchexecutionstatusbean.getComment()%>
                             </textarea></td>
                     </tr>
                     <tr>
                         <td>Issue ID :</td>
-                        <td><input type="text" name="txtIssueid" value="<%=slavepatchexecutionstatusbean.getIssueid()%>" /></td>
+                        <td><input type="text" name="txtIssueid" value="<%=slavepatchexecutionstatusbean.getIssueid() == null ? "" : slavepatchexecutionstatusbean.getIssueid()%>" /></td>
                     </tr>
                     <tr>
                         <td></td>
