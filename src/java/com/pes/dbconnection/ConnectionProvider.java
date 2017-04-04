@@ -24,7 +24,7 @@ public class ConnectionProvider {
             try {                
 
                 String driverClassName = "com.mysql.jdbc.Driver";
-                //String url = "jdbc:mysql://10.14.245.117:3306/itt";
+                
                 String url = "jdbc:mysql://localhost:3306/itt";
                 String username = "root";
                 String password = "root";
